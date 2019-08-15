@@ -1,4 +1,4 @@
-const {MyTree, Remainder} = require('./MyTree');
+const {Tree, Remainder} = require('./MyTree');
 exports.Fill = function(input) {
     
     var trees = [];
@@ -13,7 +13,7 @@ exports.Fill = function(input) {
 //add child to each child for each remainder after
 
 function GetTree(character, rest){
-    var tree = new MyTree.Tree(character);
+    var tree = new Tree(character);
     for(var i = 0; i < rest.length; i++)
         tree.addChild(rest.charAt[i], Remainder(i,rest));
     return tree;

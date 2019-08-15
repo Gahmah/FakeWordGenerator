@@ -3,8 +3,8 @@ exports.Tree = class{
         this.root = new Node(root);
     }
 
-    addChild(data, additionalData){
-        this.root.addChild(data, additionalData);
+    addChild(data, additionalChildren){
+        this.root.addChild(data, additionalChildren);
     }
 }
     class Node{
@@ -14,10 +14,13 @@ exports.Tree = class{
         this.children = [];
     }
     
-    addChild(data, additionalData){
+    addChild(data, additionalChildren){
         var newNode = new Node(data);
         newNode.parent = this;
         this.children.push(newNode);
+        for(var i = 0; i < additionalChildren.length; i++){
+            newNode.addChild(additionalChildren.charAt[i], Remainder[i]);
+        }
     }
 }
 exports.Remainder = function(i, input){
