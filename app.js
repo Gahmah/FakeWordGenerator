@@ -21,10 +21,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.post('/api/v1/cast', (req, res) =>{
-    let resBody = {firstResult:"Nuttin"};
-    if(req.body.spell != null){
-        var newSpell = engine.Fill(req.body.spell);
-        resBody = { firstResult: "argReturn", spellcast: newSpell};
+    let resBody = {firstResult:"No Input"};
+    if(req.body.spell.length){
+        resBody = { Results: engine.Fill(req.body.spell)};
     }
     res.setHeader('Content-Type', 'application/json');
     res.write(JSON.stringify(resBody));
