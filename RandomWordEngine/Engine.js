@@ -16,4 +16,3 @@ function GetTree(character, rest) {
     return tree;
 }
 
-
