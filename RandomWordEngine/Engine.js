@@ -1,12 +1,21 @@
 const { Tree, Remainder } = require('./MyTree');
+exports.Single = function(input, index){
+   return RunForCharAt(input, index);
+}
 exports.Fill = function (input) {
 
     var words = [];
     for (var i = 0; i < input.length; i++) {
-        var tree = GetTree(input.charAt(i), Remainder(i, input));
-        words.push(tree.getWords());
+        words.push(RunForCharAt(input, i));
     }
     return words;
+}
+
+function RunForCharAt(input, index){
+    var theseWords = [];
+    var tree = GetTree(input.charAt(index), Remainder(index, input));
+    theseWords.push(tree.getWords());
+    return theseWords;
 }
 
 function GetTree(character, rest) {

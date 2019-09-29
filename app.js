@@ -29,5 +29,13 @@ app.post('/api/v1/cast', (req, res) =>{
     res.write(JSON.stringify(resBody));
     res.end();
 });
-
+app.post('/api/v1/castSingle', (req,res) =>{
+    let resBody = {firstResult: "No input"};
+    if(req.body.spell.length){
+        resBody = {Results: engine.Single(req.body.spell, req.body.index)};
+    }
+    res.setHeader('Content-Type', 'application/json');
+    res.write(JSON.stringify(resBody));
+    res.end();
+});
 module.exports = app;
