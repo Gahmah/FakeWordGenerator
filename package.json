@@ -6,10 +6,26 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "morgan": "~1.9.1"
-  }
+  },
+  "description": "Create lists of words from some input",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gahmah/FakeWordGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gahmah/FakeWordGenerator/issues"
+  },
+  "homepage": "https://github.com/Gahmah/FakeWordGenerator#readme"
 }
